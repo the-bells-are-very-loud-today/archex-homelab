@@ -2,6 +2,7 @@ services:
   memos:
     image: ghcr.io/usememos/memos:stable
     container_name: memos
+    user: "1000:1000"
     volumes:
       - /srv/memos-data:/var/opt/memos
     restart: unless-stopped
