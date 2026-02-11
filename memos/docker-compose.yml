@@ -1,0 +1,17 @@
+services:
+  memos:
+    image: ghcr.io/usememos/memos:stable
+    container_name: memos
+    volumes:
+      - /srv/memos-data:/var/opt/memos
+    restart: unless-stopped
+    networks:
+      - internal_services
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  internal_services:
+    external: true
+
+

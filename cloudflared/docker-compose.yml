@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --config /etc/cloudflared/config.yml run
+    networks:
+      - internal_services
+    volumes:
+      - ./cloudflared:/etc/cloudflared
+networks:
+  internal_services:
+    external: true
+
