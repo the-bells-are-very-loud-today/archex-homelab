@@ -7,12 +7,11 @@ services:
       - /srv/vw-data:/data
     restart: unless-stopped
     environment:
-      - DOMAIN: "https:vault.archex.dev"
-      - SIGNUP_ALLOWED: "false"
+      DOMAIN: "https://vault.archex.dev"
+      SIGNUP_ALLOWED: "false"
     networks:
-      internal_services
+      - internal_services
 
 networks:
-  internal_network:
+  internal_services:
     external: true
-
