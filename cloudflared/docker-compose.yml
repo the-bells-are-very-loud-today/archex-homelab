@@ -7,10 +7,10 @@ services:
     restart: unless-stopped
     command: tunnel --config /etc/cloudflared/config.yml run
     networks:
-      - internal_services
+      - external_network
     volumes:
       - ./cloudflared:/etc/cloudflared
 networks:
-  internal_services:
+  external_network:
     external: true
 

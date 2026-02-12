@@ -1,7 +1,13 @@
 {
         auto_https off
 }
-:80 {
+vault.archex.dev:80 {
+	handle {
+	   reverse_proxy vaultwarden:80
+	}
+}
+scrolls.archex.dev:80 {
+    
     handle_path /scrolls/* { 
         root * /srv/static
         file_server
