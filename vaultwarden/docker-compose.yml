@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     environment:
       DOMAIN: "https://vault.archex.dev"
-      SIGNUP_ALLOWED: "false"
+      SIGNUPS_ALLOWED: "false"
     networks:
       - internal_services
 
