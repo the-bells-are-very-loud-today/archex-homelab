@@ -12,9 +12,12 @@ services:
       - ./caddy-static:/srv/static
     restart: unless-stopped
     networks:
+      - external_network
       - internal_services
 
 networks:
+  external_network:
+    external: true
   internal_services:
     external: true
 

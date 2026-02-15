@@ -1,0 +1,17 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    user: "1000:1000"
+    container_name: vaultwarden
+    volumes:
+      - /srv/vw-data:/data
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://vault.archex.dev"
+      SIGNUPS_ALLOWED: "false"
+    networks:
+      - internal_services
+
+networks:
+  internal_services:
+    external: true
