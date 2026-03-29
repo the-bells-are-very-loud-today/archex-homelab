@@ -1,11 +1,23 @@
 {
         auto_https off
 }
+archex.dev:80 {
+	root * /srv/archex
+	file_server
+}
 vault.archex.dev:80 {
 	handle {
 	   reverse_proxy vaultwarden:80
 	}
 }
+rss.archex.dev:80 {
+   	encode gzip zstd
+   	reverse_proxy ttrss:80 {
+	   header_up X-Forwarded-Proto {scheme}
+           header_up Host {host}
+           header_up X-Real-IP {remote_host}
+	}
+   }
 scrolls.archex.dev:80 {
     
     handle_path /scrolls/* { 

@@ -10,6 +10,7 @@ services:
       - /srv/caddy-config:/config
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./caddy-static:/srv/static
+      - ./archex:/srv/archex
     restart: unless-stopped
     networks:
       - external_network
