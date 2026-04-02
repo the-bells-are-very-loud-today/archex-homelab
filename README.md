@@ -5,3 +5,4 @@
 - caddy: reverse proxy server for added security
 - memos: FOSS self-hosted notes app [memos website](https://usememos.com)
 - vaultwarden: FOSS self-hosted password manager, compatible with bitwarden! [vaultwarden github](https://github.com/dani-garcia/vaultwarden)
+- ttrss: FOSS rss aggregator [tiny tiny rss](https://tt-rss.org)
