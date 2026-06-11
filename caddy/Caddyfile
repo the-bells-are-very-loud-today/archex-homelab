@@ -3,7 +3,8 @@
 }
 archex.dev:80 {
 	root * /srv/archex
-	file_server
+    try_files {path}.html
+	file_server 
 }
 vault.archex.dev:80 {
 	handle {
